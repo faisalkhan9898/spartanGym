@@ -4,21 +4,25 @@
   :root {
     --font-heading: 'Syne', 'Outfit', sans-serif;
     --font-body: 'Outfit', 'Inter', sans-serif;
-    --primary: #FF4500;
-    --primary-hover: #FF5A1F;
-    --primary-glow: rgba(255, 69, 0, 0.4);
-    --secondary: #E63900;
-    --accent: #00FF87;
-    --bg-dark: #0A0A0A;
-    --bg-card: #121212;
-    --bg-card-hover: #181818;
-    --border-card: #222222;
+    
+    /* Clean White & Radiant Spartan Yellow Theme */
+    --primary: #FACC15;
+    --primary-hover: #EAB308;
+    --primary-glow: rgba(234, 179, 8, 0.35);
+    --secondary: #0F172A;
+    --accent: #CA8A04;
+    --bg-body: #FFFFFF;
+    --bg-section-alt: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --border-light: #E2E8F0;
+    --text-main: #0F172A;
+    --text-muted: #64748B;
   }
 
   body {
     font-family: var(--font-body);
-    background-color: #0A0A0A;
-    color: #F3F4F6;
+    background-color: #FFFFFF;
+    color: #0F172A;
     overflow-x: hidden;
   }
 
@@ -28,72 +32,75 @@
   }
 }
 
-/* Glassmorphism & Custom Effects */
+/* Glassmorphism & Light Theme Tokens */
 .glass-panel {
-  background: rgba(18, 18, 18, 0.75);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
 .glass-nav {
-  background: rgba(10, 10, 10, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .glass-card {
-  background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(14, 14, 14, 0.8) 100%);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 69, 0, 0.4);
-  box-shadow: 0 10px 30px -10px rgba(255, 69, 0, 0.2);
+  border-color: #FACC15;
+  box-shadow: 0 12px 30px -4px rgba(234, 179, 8, 0.15);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #FFFFFF 30%, #9CA3AF 100%);
+  background: linear-gradient(135deg, #0F172A 30%, #334155 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-orange,
+.text-gradient-yellow,
 .text-gradient-primary {
-  background: linear-gradient(135deg, #FF6B35 0%, #FF4500 50%, #FF1E00 100%);
+  background: linear-gradient(135deg, #CA8A04 0%, #EAB308 50%, #F59E0B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .glow-orange,
+.glow-yellow,
 .glow-primary {
-  box-shadow: 0 0 25px rgba(255, 69, 0, 0.35);
+  box-shadow: 0 4px 20px rgba(234, 179, 8, 0.35);
 }
 
 .glow-orange-lg,
+.glow-yellow-lg,
 .glow-primary-lg {
-  box-shadow: 0 0 45px rgba(255, 69, 0, 0.5);
+  box-shadow: 0 8px 30px rgba(234, 179, 8, 0.45);
 }
 
-/* Custom Scrollbar */
+/* Custom Clean Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272A;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF4500;
+  background: #EAB308;
 }
 
 /* Keyframe animations */
@@ -103,7 +110,7 @@
     transform: scale(1);
   }
   50% {
-    opacity: 0.8;
+    opacity: 0.85;
     transform: scale(1.05);
   }
 }
@@ -125,21 +132,21 @@
   animation: float 5s ease-in-out infinite;
 }
 
-/* Swiper Custom Styling */
+/* Swiper Custom Styling for Light/White Theme */
 .banner-swiper-container .swiper-pagination-bullet {
-  background: #52525B;
-  opacity: 0.7;
+  background: #94A3B8;
+  opacity: 0.6;
   width: 8px;
   height: 8px;
   transition: all 0.3s ease;
 }
 
 .banner-swiper-container .swiper-pagination-bullet-active {
-  background: #FF4500;
+  background: #EAB308;
   opacity: 1;
   width: 24px;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(255, 69, 0, 0.6);
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
 }
 
 .banner-swiper-container .swiper-pagination {
@@ -147,14 +154,23 @@
 }
 
 .hero-swiper-wrapper .swiper-pagination-bullet {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   width: 10px;
   height: 10px;
 }
 
 .hero-swiper-wrapper .swiper-pagination-bullet-active {
-  background: #FF4500;
+  background: #FACC15;
   width: 28px;
   border-radius: 6px;
-  box-shadow: 0 0 12px rgba(255, 69, 0, 0.8);
+  box-shadow: 0 0 14px rgba(250, 204, 21, 0.85);
+}
+
+/* Hide scrollbar for clean tab carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -48,18 +48,18 @@ export default function About() {
             alt="About Spartans Gym"
             className="w-full h-full object-cover object-center filter brightness-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-black/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/80 to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest bg-orange-950/80 text-orange-400 border border-orange-500/40 mb-4 backdrop-blur-md">
-            <Flame className="w-3.5 h-3.5 text-orange-500" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest bg-yellow-500/15 text-yellow-300 border border-yellow-400/40 mb-4 backdrop-blur-md">
+            <Flame className="w-3.5 h-3.5 text-yellow-400" />
             <span>Our Heritage & Vision</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase font-heading tracking-tight leading-tight">
             More Than A Gym.{' '}
-            <span className="text-gradient-orange block">
+            <span className="text-gradient-yellow block">
               It's A Lifestyle.
             </span>
           </h1>
@@ -76,32 +76,32 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-orange-950 text-orange-400 border border-orange-800">
-              <Dumbbell className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-yellow-500/15 text-yellow-300 border border-yellow-400/40">
+              <Dumbbell className="w-3.5 h-3.5 text-yellow-400" />
               <span>Founded in 2016</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-black text-white uppercase font-heading leading-tight">
               Forged From Passion.{' '}
-              <span className="text-gradient-orange block">
+              <span className="text-gradient-yellow block">
                 Engineered For Strength.
               </span>
             </h2>
 
-            <p className="text-zinc-300 text-base leading-relaxed">
+            <p className="text-zinc-200 text-base leading-relaxed">
               A decade ago, our founders looked around at conventional gyms and saw overcrowded floors, neglected equipment, and cookie-cutter personal training programs that produced zero long-term results.
             </p>
 
-            <p className="text-zinc-400 text-sm leading-relaxed">
+            <p className="text-zinc-300 text-sm leading-relaxed">
               Spartans Gym was engineered as the antidote. We built a high-performance training facility equipped with competition-grade Eleiko plates, calibrated power cages, turf sprint tracks, and infrared recovery suites. But more than equipment, we built an ecosystem of master educators and mentors.
             </p>
 
-            <div className="border-l-2 border-orange-500 pl-4 py-1 italic text-zinc-300 text-sm font-medium">
+            <div className="border-l-2 border-yellow-400 pl-4 py-1 italic text-zinc-200 text-sm font-medium bg-yellow-500/5 rounded-r-lg">
               "We don't believe in quick-fix shortcuts. We believe in progressive consistency, iron discipline, and celebrating every member who steps through our doors."
             </div>
 
             <div className="pt-2">
-              <Button to="/free-trial" variant="glow" size="md" icon={ChevronRight}>
+              <Button to="/free-trial" variant="primary" size="md" icon={ChevronRight}>
                 Experience Spartans Gym Firsthand
               </Button>
             </div>
@@ -125,14 +125,14 @@ export default function About() {
 
 
       {/* Facility Milestones */}
-      <section className="py-16 bg-[#0E0E0E] border-y border-zinc-900 px-4 sm:px-6">
+      <section className="py-16 bg-[#0E0E10] border-y border-zinc-900 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           {facilityMilestones.map((item, idx) => (
             <div key={idx} className="glass-card rounded-2xl p-6 border border-zinc-800">
-              <p className="text-3xl sm:text-4xl font-black text-orange-500 font-heading mb-1">
+              <p className="text-3xl sm:text-4xl font-black text-yellow-400 font-heading mb-1">
                 {item.number}
               </p>
-              <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-zinc-400">
+              <p className="text-xs sm:text-sm font-bold uppercase tracking-wider text-zinc-300">
                 {item.label}
               </p>
             </div>
@@ -156,15 +156,15 @@ export default function About() {
             return (
               <div
                 key={idx}
-                className="glass-card rounded-2xl p-7 border border-zinc-800 hover:border-orange-500/40 transition-all group"
+                className="glass-card rounded-2xl p-7 border border-zinc-800 hover:border-yellow-400/50 transition-all group"
               >
-                <div className="w-12 h-12 rounded-xl bg-orange-600/10 border border-orange-500/30 flex items-center justify-center text-orange-500 mb-5 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-yellow-500/15 border border-yellow-400/30 flex items-center justify-center text-yellow-400 mb-5 group-hover:bg-yellow-400 group-hover:text-black transition-colors font-bold">
                   <IconComponent className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-black text-white uppercase font-heading mb-2 group-hover:text-orange-400 transition-colors">
+                <h3 className="text-lg font-black text-white uppercase font-heading mb-2 group-hover:text-yellow-300 transition-colors">
                   {value.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -190,10 +190,10 @@ export default function About() {
                 <img
                   src={t.image}
                   alt={t.name}
-                  className="w-20 h-20 rounded-full mx-auto object-cover border-2 border-orange-500/40 mb-3"
+                  className="w-20 h-20 rounded-full mx-auto object-cover border-2 border-yellow-400/50 mb-3"
                 />
                 <h4 className="text-xs font-black text-white uppercase truncate">{t.name}</h4>
-                <p className="text-[10px] text-orange-400 font-bold truncate">{t.specialty}</p>
+                <p className="text-[10px] text-yellow-400 font-bold truncate">{t.specialty}</p>
               </div>
             ))}
           </div>

@@ -76,19 +76,19 @@ export default function Contact() {
 
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-orange-600/10 border border-orange-500/30 text-orange-400 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-yellow-500/15 border border-yellow-400/30 text-yellow-400 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-bold text-white uppercase text-xs">Facility Location</h4>
-                    <p className="text-zinc-400 mt-0.5 leading-relaxed">
+                    <p className="text-zinc-300 mt-0.5 leading-relaxed">
                       Chanod Colony, Vapi, Gujarat, India - 396195
                     </p>
                     <a
                       href="https://www.google.com/maps/dir/?api=1&origin=Your%20location&destination=Chanod%20Colony,%20Vapi,%20Gujarat,%20India%20%20Vapi%20%20-%20396195%20India&travelmode=driving&dir_action=navigate"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-orange-400 font-bold uppercase tracking-wider mt-2 hover:text-orange-300"
+                      className="inline-flex items-center gap-1.5 text-xs text-yellow-400 font-bold uppercase tracking-wider mt-2 hover:text-yellow-300"
                     >
                       <span>Get Directions On Google Maps →</span>
                     </a>
@@ -96,18 +96,18 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-orange-600/10 border border-orange-500/30 text-orange-400 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-yellow-500/15 border border-yellow-400/30 text-yellow-400 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-bold text-white uppercase text-xs">Direct Call & WhatsApp Desk</h4>
-                    <a href="tel:+918866338858" className="text-white hover:text-orange-400 font-bold transition-colors block mt-0.5">
+                    <a href="tel:+918866338858" className="text-white hover:text-yellow-400 font-bold transition-colors block mt-0.5">
                       +91 88663 38858 (088663 38858)
                     </a>
                     <div className="flex items-center gap-2 mt-2">
                       <a
                         href="tel:+918866338858"
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-orange-600/20 text-orange-400 border border-orange-500/40 text-[11px] font-bold uppercase tracking-wider hover:bg-orange-600 hover:text-white transition-all"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-yellow-400 text-black border border-yellow-300 text-[11px] font-black uppercase tracking-wider hover:bg-yellow-300 transition-all shadow-sm"
                       >
                         <Phone className="w-3 h-3" /> Call Now
                       </a>
@@ -124,19 +124,19 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-orange-600/10 border border-orange-500/30 text-orange-400 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-yellow-500/15 border border-yellow-400/30 text-yellow-400 flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <h4 className="font-bold text-white uppercase text-xs">Email Desk</h4>
-                    <a href="mailto:hello@spartansgym.com" className="text-zinc-400 hover:text-orange-400 transition-colors block mt-0.5">
+                    <a href="mailto:hello@spartansgym.com" className="text-zinc-300 hover:text-yellow-400 transition-colors block mt-0.5">
                       hello@spartansgym.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-orange-600/10 border border-orange-500/30 text-orange-400 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-yellow-500/15 border border-yellow-400/30 text-yellow-400 flex items-center justify-center shrink-0">
                     <InstagramIcon className="w-5 h-5" />
                   </div>
                   <div>
@@ -145,7 +145,7 @@ export default function Contact() {
                       href="https://www.instagram.com/spartansfitnessofficial/"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-zinc-400 hover:text-orange-400 transition-colors block mt-0.5"
+                      className="text-zinc-300 hover:text-yellow-400 transition-colors block mt-0.5 font-medium"
                     >
                       @spartansfitnessofficial
                     </a>
@@ -155,7 +155,7 @@ export default function Contact() {
 
               {/* Operating Hours Box */}
               <div className="pt-6 border-t border-zinc-800">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase text-orange-400 mb-3">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase text-yellow-400 mb-3">
                   <Clock className="w-4 h-4" />
                   <span>Gym Operating Schedule</span>
                 </div>
@@ -270,7 +270,7 @@ export default function Contact() {
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="john@example.com"
                         className={`w-full bg-zinc-900 border rounded-xl px-4 py-3 text-sm text-white focus:outline-none ${
-                          errors.email ? 'border-red-500' : 'border-zinc-700 focus:border-orange-500'
+                          errors.email ? 'border-red-500' : 'border-zinc-700 focus:border-yellow-400'
                         }`}
                       />
                       {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email}</p>}
@@ -284,9 +284,9 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 88663 38858"
                         className={`w-full bg-zinc-900 border rounded-xl px-4 py-3 text-sm text-white focus:outline-none ${
-                          errors.phone ? 'border-red-500' : 'border-zinc-700 focus:border-orange-500'
+                          errors.phone ? 'border-red-500' : 'border-zinc-700 focus:border-yellow-400'
                         }`}
                       />
                       {errors.phone && <p className="text-xs text-red-400 mt-1">{errors.phone}</p>}
@@ -302,7 +302,7 @@ export default function Contact() {
                       <select
                         value={formData.fitnessGoal}
                         onChange={(e) => setFormData({ ...formData, fitnessGoal: e.target.value })}
-                        className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500"
+                        className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-400 font-medium"
                       >
                         <option value="Muscle Building">Muscle Building & Hypertrophy</option>
                         <option value="Weight Loss">Weight Loss & Shred</option>
@@ -319,7 +319,7 @@ export default function Contact() {
                       <select
                         value={formData.membershipType}
                         onChange={(e) => setFormData({ ...formData, membershipType: e.target.value })}
-                        className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500"
+                        className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-yellow-400 font-medium"
                       >
                         <option value="Basic Plan">Basic Tier (₹999/mo)</option>
                         <option value="Pro Plan">Pro Tier (₹1,999/mo)</option>
@@ -340,13 +340,13 @@ export default function Contact() {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell us about your fitness targets, schedule availability, or questions..."
                       className={`w-full bg-zinc-900 border rounded-xl px-4 py-3 text-sm text-white focus:outline-none ${
-                        errors.message ? 'border-red-500' : 'border-zinc-700 focus:border-orange-500'
+                        errors.message ? 'border-red-500' : 'border-zinc-700 focus:border-yellow-400'
                       }`}
                     ></textarea>
                     {errors.message && <p className="text-xs text-red-400 mt-1">{errors.message}</p>}
                   </div>
 
-                  <Button type="submit" variant="glow" size="lg" className="w-full" icon={Send}>
+                  <Button type="submit" variant="primary" size="lg" className="w-full" icon={Send}>
                     Submit Inquiry
                   </Button>
                 </form>

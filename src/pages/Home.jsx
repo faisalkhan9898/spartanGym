@@ -1,11 +1,27 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Dumbbell, Flame, Trophy, Users, Shield, Zap, Sparkles, HeartPulse,
-  Activity, ArrowRight, CheckCircle2, ChevronRight, Clock, Award, Play
+import { 
+  Dumbbell, 
+  Flame, 
+  Award, 
+  Users, 
+  Calendar, 
+  ShieldCheck, 
+  CheckCircle2, 
+  ArrowRight, 
+  ChevronRight, 
+  Star, 
+  Play, 
+  Clock, 
+  Target, 
+  HeartPulse, 
+  Zap, 
+  Check, 
+  X 
 } from 'lucide-react';
-import Button from '../components/Button';
+
 import SectionHeading from '../components/SectionHeading';
+import Button from '../components/Button';
 import ProgramCard from '../components/ProgramCard';
 import TrainerCard from '../components/TrainerCard';
 import PricingCard from '../components/PricingCard';
@@ -13,11 +29,11 @@ import TestimonialCard from '../components/TestimonialCard';
 import TransformationCard from '../components/TransformationCard';
 import FAQ from '../components/FAQ';
 import BmiCalculator from '../components/BmiCalculator';
-import GalleryModal from '../components/GalleryModal';
 import CTASection from '../components/CTASection';
-import BannerSlider from '../components/BannerSlider';
 import HeroSlider from '../components/HeroSlider';
+import BannerSlider from '../components/BannerSlider';
 
+// Data Imports
 import { programsData } from '../data/programs';
 import { trainersData } from '../data/trainers';
 import { membershipPlans } from '../data/plans';
@@ -27,134 +43,55 @@ import { galleryItems } from '../data/gallery';
 import { scheduleTimetable, daysOfWeek } from '../data/classes';
 
 export default function Home() {
-  const [isAnnual, setIsAnnual] = useState(false);
   const [selectedDay, setSelectedDay] = useState('Monday');
-  const [activeGalleryImage, setActiveGalleryImage] = useState(null);
-  const [galleryIndex, setGalleryIndex] = useState(0);
+  const [isAnnual, setIsAnnual] = useState(false);
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState(null);
 
-  // Gallery lightbox helpers
-  const openGalleryModal = (index) => {
-    setGalleryIndex(index);
-    setActiveGalleryImage(galleryItems[index]);
-  };
-  const nextGalleryImage = () => {
-    const nextIdx = (galleryIndex + 1) % galleryItems.length;
-    setGalleryIndex(nextIdx);
-    setActiveGalleryImage(galleryItems[nextIdx]);
-  };
-  const prevGalleryImage = () => {
-    const prevIdx = (galleryIndex - 1 + galleryItems.length) % galleryItems.length;
-    setGalleryIndex(prevIdx);
-    setActiveGalleryImage(galleryItems[prevIdx]);
-  };
-
-  const whyChooseFeatures = [
-    {
-      icon: Award,
-      title: "Expert Certified Trainers",
-      description: "NSCA, CSCS & NASM credentialed coaches dedicated to maximizing your gains and keeping you injury-free."
-    },
-    {
-      icon: Dumbbell,
-      title: "Olympic Grade Equipment",
-      description: "Eleiko calibrated barbells, Hammer Strength plate-loaded machines, and Rogue functional rigs."
-    },
-    {
-      icon: Zap,
-      title: "Personalized Programs",
-      description: "Customized volume, intensity, and progressive overload schemes built precisely around your biology."
-    },
-    {
-      icon: Users,
-      title: "Supportive Community",
-      description: "A motivating, high-energy environment filled with driven peers who push you to conquer new PRs."
-    },
-    {
-      icon: Shield,
-      title: "Flexible Memberships",
-      description: "Transparent pricing tiers, no locking contracts, easy freeze options, and zero hidden joining fees."
-    },
-    {
-      icon: Trophy,
-      title: "Measurable Results Driven",
-      description: "Bi-weekly InBody 570 body composition scans and performance metrics to guarantee tangible progress."
-    }
-  ];
+  const openGalleryModal = (index) => setActiveGalleryIndex(index);
+  const closeGalleryModal = () => setActiveGalleryIndex(null);
 
   return (
-    <div className="overflow-hidden">
+    <div className="flex flex-col bg-white text-slate-900">
       
-      {/* 1. HERO BANNER SLIDER (Directly Below Navbar with Swiper.js Fade Effects) */}
+      {/* 1. HERO BANNER SLIDER (Full Width Slider with Fade & Prominent Chevrons) */}
       <HeroSlider />
 
-      {/* Mobile Stats Section */}
-      <section className="py-8 bg-zinc-950 border-y border-zinc-900 lg:hidden px-4">
-        <div className="max-w-xl mx-auto grid grid-cols-2 gap-4">
-          <div className="glass-card rounded-xl p-4 text-center">
-            <p className="text-2xl font-black text-white font-heading">10+</p>
-            <p className="text-xs uppercase font-bold text-orange-400">Years Experience</p>
+      {/* Mobile Stats Bar (shown below Hero on small screens) */}
+      <div className="block lg:hidden bg-slate-100 border-y border-slate-200 py-6 px-4">
+        <div className="grid grid-cols-2 gap-4 text-center">
+          <div className="p-3 bg-white rounded-2xl border border-slate-200 shadow-sm">
+            <p className="text-2xl font-black text-slate-900 font-heading">10+</p>
+            <p className="text-[10px] uppercase font-bold text-yellow-600 tracking-wider">Years Experience</p>
           </div>
-          <div className="glass-card rounded-xl p-4 text-center">
-            <p className="text-2xl font-black text-white font-heading">5,000+</p>
-            <p className="text-xs uppercase font-bold text-orange-400">Active Members</p>
+          <div className="p-3 bg-white rounded-2xl border border-slate-200 shadow-sm">
+            <p className="text-2xl font-black text-slate-900 font-heading">5,000+</p>
+            <p className="text-[10px] uppercase font-bold text-yellow-600 tracking-wider">Active Members</p>
           </div>
-          <div className="glass-card rounded-xl p-4 text-center">
-            <p className="text-2xl font-black text-white font-heading">20+</p>
-            <p className="text-xs uppercase font-bold text-orange-400">Expert Trainers</p>
+          <div className="p-3 bg-white rounded-2xl border border-slate-200 shadow-sm">
+            <p className="text-2xl font-black text-slate-900 font-heading">20+</p>
+            <p className="text-[10px] uppercase font-bold text-yellow-600 tracking-wider">Expert Trainers</p>
           </div>
-          <div className="glass-card rounded-xl p-4 text-center">
-            <p className="text-2xl font-black text-white font-heading">50+</p>
-            <p className="text-xs uppercase font-bold text-orange-400">Weekly Classes</p>
+          <div className="p-3 bg-white rounded-2xl border border-slate-200 shadow-sm">
+            <p className="text-2xl font-black text-slate-900 font-heading">50+</p>
+            <p className="text-[10px] uppercase font-bold text-yellow-600 tracking-wider">Weekly Classes</p>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* SWIPER.JS BANNER SLIDER (Slides Per View) */}
+
+      {/* 2. SPARTAN ACTION SHOWCASE SLIDER (Swiper.js Slides Per View) */}
       <BannerSlider />
 
 
-      {/* 2. WHY CHOOSE US */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
-        <SectionHeading
-          badge="The Spartan Advantage"
-          title="Why Train With"
-          highlight="SPARTANS GYM?"
-          description="We blend cutting-edge sports science, championship-level coaching, and state-of-the-art facilities to create an environment where failure isn't an option."
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {whyChooseFeatures.map((feat, idx) => {
-            const IconComp = feat.icon;
-            return (
-              <div
-                key={idx}
-                className="glass-card rounded-2xl p-8 border border-zinc-800/80 hover:border-orange-500/50 transition-all duration-300 hover:-translate-y-1.5 group"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-orange-600/10 border border-orange-500/30 flex items-center justify-center text-orange-500 group-hover:bg-orange-600 group-hover:text-white transition-all duration-300 shadow-lg shadow-orange-600/10 mb-6">
-                  <IconComp className="w-7 h-7" />
-                </div>
-                <h3 className="text-xl font-black text-white uppercase font-heading group-hover:text-orange-400 transition-colors mb-2">
-                  {feat.title}
-                </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  {feat.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-
-      {/* 3. FITNESS PROGRAMS */}
-      <section className="py-20 sm:py-28 bg-[#0D0D0D] border-y border-zinc-900 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 3. FEATURED PROGRAMS */}
+      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-white">
+        <div className="relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <SectionHeading
-              badge="Goal-Specific Regimens"
-              title="Train For"
-              highlight="Your Goal"
-              description="Explore science-backed fitness roadmaps tailored for rapid fat loss, raw strength, functional mobility, and aesthetic hypertrophy."
+              badge="World-Class Training"
+              title="Signature Training"
+              highlight="Programs"
+              description="Whether your goal is packing on raw lean muscle mass, dropping body fat, or building superhuman athletic stamina, we have the specialized protocol for you."
               align="left"
               className="mb-0 max-w-2xl"
             />
@@ -166,7 +103,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programsData.map((program) => (
+            {programsData.slice(0, 3).map((program) => (
               <ProgramCard key={program.id} program={program} />
             ))}
           </div>
@@ -180,21 +117,21 @@ export default function Home() {
           
           {/* Left Collage Images */}
           <div className="lg:col-span-6 relative">
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-zinc-800">
+            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
               <img
                 src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=80"
                 alt="Spartans Gym Community"
                 className="w-full h-[440px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl glass-panel border border-zinc-700/60">
-                <p className="text-white font-extrabold text-sm uppercase">15,000+ Sq. Ft. World-Class Facility</p>
-                <p className="text-zinc-400 text-xs mt-0.5">Designed with dedicated zones for power, cardio, recovery & turf.</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-md">
+                <p className="text-slate-900 font-extrabold text-sm uppercase">15,000+ Sq. Ft. World-Class Facility</p>
+                <p className="text-slate-500 text-xs mt-0.5">Designed with dedicated zones for power, cardio, recovery & turf.</p>
               </div>
             </div>
 
             {/* Floating Experience Badge */}
-            <div className="absolute -top-6 -right-4 sm:-right-6 w-32 h-32 rounded-2xl bg-gradient-to-br from-orange-600 to-red-600 p-4 text-white flex flex-col justify-center items-center text-center shadow-2xl shadow-orange-600/50 border-2 border-black z-20">
+            <div className="absolute -top-6 -right-4 sm:-right-6 w-32 h-32 rounded-3xl bg-gradient-to-br from-yellow-400 to-amber-500 p-4 text-slate-950 flex flex-col justify-center items-center text-center shadow-2xl shadow-yellow-500/40 border-4 border-white z-20 font-black">
               <span className="text-3xl font-black font-heading leading-none">10+</span>
               <span className="text-[10px] font-black uppercase tracking-wider mt-1">Years Building Champions</span>
             </div>
@@ -202,35 +139,35 @@ export default function Home() {
 
           {/* Right Text Content */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest bg-orange-950/70 text-orange-400 border border-orange-500/30">
-              <Flame className="w-3.5 h-3.5 text-orange-500" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest bg-yellow-400/20 text-yellow-800 border border-yellow-400/40">
+              <Flame className="w-3.5 h-3.5 text-yellow-500" />
               <span>Our Philosophy & Legacy</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase font-heading tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase font-heading tracking-tight leading-tight">
               More Than A Gym.{' '}
-              <span className="text-gradient-orange block">
+              <span className="text-gradient-yellow block">
                 It's A Lifestyle.
               </span>
             </h2>
 
-            <p className="text-zinc-300 text-base leading-relaxed">
+            <p className="text-slate-600 text-base leading-relaxed">
               Spartans Gym was founded with a singular mission: to strip away gimmicks and deliver true, uncompromising athletic excellence. We believe fitness is not just about aesthetics — it is about fortifying your body, sharpening mental resilience, and unlocking your absolute highest potential.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-4 rounded-xl glass-card border border-zinc-800">
-                <h4 className="text-white font-bold text-sm uppercase flex items-center gap-2 mb-1">
-                  <CheckCircle2 className="w-4 h-4 text-orange-500" /> Evidence-Based
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                <h4 className="text-slate-900 font-bold text-sm uppercase flex items-center gap-2 mb-1">
+                  <CheckCircle2 className="w-4 h-4 text-yellow-500" /> Evidence-Based
                 </h4>
-                <p className="text-xs text-zinc-400">Programs engineered with sports science and nutrition precision.</p>
+                <p className="text-xs text-slate-500">Programs engineered with sports science and nutrition precision.</p>
               </div>
 
-              <div className="p-4 rounded-xl glass-card border border-zinc-800">
-                <h4 className="text-white font-bold text-sm uppercase flex items-center gap-2 mb-1">
-                  <CheckCircle2 className="w-4 h-4 text-orange-500" /> Unmatched Culture
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                <h4 className="text-slate-900 font-bold text-sm uppercase flex items-center gap-2 mb-1">
+                  <CheckCircle2 className="w-4 h-4 text-yellow-500" /> Unmatched Culture
                 </h4>
-                <p className="text-xs text-zinc-400">Zero ego, high accountability, and peers cheering every PR.</p>
+                <p className="text-xs text-slate-500">Zero ego, high accountability, and peers cheering every PR.</p>
               </div>
             </div>
 
@@ -246,7 +183,7 @@ export default function Home() {
 
 
       {/* 5. REAL TRANSFORMATIONS */}
-      <section className="py-20 sm:py-28 bg-[#0D0D0D] border-t border-zinc-900 relative">
+      <section className="py-20 sm:py-28 bg-slate-50 border-t border-slate-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Proven Case Studies"
@@ -262,10 +199,10 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-sm text-zinc-400 mb-4">
+            <p className="text-sm text-slate-600 mb-4">
               Ready to write your own transformation story?
             </p>
-            <Button to="/join" variant="glow" size="md" icon={ChevronRight}>
+            <Button to="/join" variant="primary" size="md" icon={ChevronRight}>
               Claim Your Transformation Plan
             </Button>
           </div>
@@ -274,7 +211,7 @@ export default function Home() {
 
 
       {/* 6. EXPERT TRAINERS */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-white">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <SectionHeading
             badge="Master Coaching Staff"
@@ -300,7 +237,7 @@ export default function Home() {
 
 
       {/* 7. MEMBERSHIP PLANS */}
-      <section className="py-20 sm:py-28 bg-[#0D0D0D] border-y border-zinc-900 relative">
+      <section className="py-20 sm:py-28 bg-slate-50 border-y border-slate-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SectionHeading
@@ -312,25 +249,25 @@ export default function Home() {
 
           {/* Billing Toggle (Monthly / Annual) */}
           <div className="flex items-center justify-center gap-4 mb-12">
-            <span className={`text-sm font-bold uppercase tracking-wider ${!isAnnual ? 'text-white' : 'text-zinc-500'}`}>
+            <span className={`text-sm font-bold uppercase tracking-wider ${!isAnnual ? 'text-slate-900' : 'text-slate-400'}`}>
               Monthly
             </span>
             <button
               onClick={() => setIsAnnual(!isAnnual)}
-              className="w-16 h-8 rounded-full bg-zinc-900 border border-zinc-700 p-1 flex items-center transition-colors focus:outline-none cursor-pointer"
+              className="w-16 h-8 rounded-full bg-slate-200 border border-slate-300 p-1 flex items-center transition-colors focus:outline-none cursor-pointer"
               aria-label="Toggle Annual Billing"
             >
               <div
-                className={`w-6 h-6 rounded-full bg-orange-500 shadow-md transform transition-transform duration-300 ${
-                  isAnnual ? 'translate-x-8 bg-gradient-to-r from-orange-500 to-red-500' : 'translate-x-0'
+                className={`w-6 h-6 rounded-full bg-yellow-400 shadow-md transform transition-transform duration-300 ${
+                  isAnnual ? 'translate-x-8 bg-gradient-to-r from-yellow-400 to-amber-500' : 'translate-x-0'
                 }`}
               ></div>
             </button>
             <div className="flex items-center gap-2">
-              <span className={`text-sm font-bold uppercase tracking-wider ${isAnnual ? 'text-white' : 'text-zinc-500'}`}>
+              <span className={`text-sm font-bold uppercase tracking-wider ${isAnnual ? 'text-slate-900' : 'text-slate-400'}`}>
                 Annual
               </span>
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-orange-600 text-white">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-yellow-400 text-slate-950">
                 Save 20%
               </span>
             </div>
@@ -348,7 +285,7 @@ export default function Home() {
 
 
       {/* 8. CLASSES SCHEDULE TIMETABLE */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-white">
         <SectionHeading
           badge="High Energy Group Fitness"
           title="Weekly Class"
@@ -364,8 +301,8 @@ export default function Home() {
               onClick={() => setSelectedDay(day)}
               className={`px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 selectedDay === day
-                  ? 'bg-orange-600 text-white shadow-lg shadow-orange-600/30'
-                  : 'bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 border border-zinc-800'
+                  ? 'bg-yellow-400 text-slate-950 font-black shadow-md shadow-yellow-500/20'
+                  : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
               }`}
             >
               {day}
@@ -380,30 +317,30 @@ export default function Home() {
             return (
               <div
                 key={idx}
-                className="glass-card rounded-2xl p-5 border border-zinc-800 hover:border-orange-500/50 transition-all flex flex-col justify-between"
+                className="bg-white rounded-3xl p-5 border border-slate-200 hover:border-yellow-400 transition-all flex flex-col justify-between shadow-sm hover:shadow-md"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-[11px] font-bold text-orange-400 flex items-center gap-1">
+                    <span className="text-[11px] font-bold text-yellow-600 flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5" />
                       {slot.time}
                     </span>
-                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-zinc-800 text-zinc-300 border border-zinc-700">
+                    <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-yellow-50 text-yellow-800 border border-yellow-200">
                       {classInfo.category}
                     </span>
                   </div>
 
-                  <h4 className="text-lg font-black text-white uppercase font-heading mb-1">
+                  <h4 className="text-lg font-black text-slate-900 uppercase font-heading mb-1">
                     {classInfo.name}
                   </h4>
-                  <p className="text-xs text-zinc-400">
-                    Coach: <strong className="text-zinc-200">{classInfo.coach}</strong>
+                  <p className="text-xs text-slate-500">
+                    Coach: <strong className="text-slate-800">{classInfo.coach}</strong>
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-400">
+                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
                   <span>🔥 {classInfo.calories}</span>
-                  <span className="font-bold text-orange-400">{classInfo.room}</span>
+                  <span className="font-bold text-yellow-600">{classInfo.room}</span>
                 </div>
               </div>
             );
@@ -419,13 +356,13 @@ export default function Home() {
 
 
       {/* 9. BMI CALCULATOR */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50 border-y border-slate-200 rounded-3xl my-6">
         <BmiCalculator />
       </section>
 
 
       {/* 10. GYM PHOTO GALLERY */}
-      <section className="py-20 sm:py-28 bg-[#0D0D0D] border-y border-zinc-900 relative">
+      <section className="py-20 sm:py-28 bg-white border-b border-slate-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="State-Of-The-Art Arena"
@@ -439,21 +376,21 @@ export default function Home() {
               <div
                 key={item.id}
                 onClick={() => openGalleryModal(idx)}
-                className="group relative h-72 rounded-2xl overflow-hidden cursor-pointer glass-card border border-zinc-800 hover:border-orange-500/50 transition-all duration-300"
+                className="group relative h-72 rounded-3xl overflow-hidden cursor-pointer bg-white border border-slate-200 hover:border-yellow-400 transition-all duration-300 shadow-md"
               >
                 <img
                   src={item.image}
                   alt={item.title}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                 
                 <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-orange-600 text-white mb-1.5">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-yellow-400 text-slate-950 mb-1.5 font-black">
                     {item.category}
                   </span>
-                  <h4 className="text-base font-black text-white uppercase font-heading group-hover:text-orange-400 transition-colors">
+                  <h4 className="text-base font-black text-white uppercase font-heading group-hover:text-yellow-300 transition-colors">
                     {item.title}
                   </h4>
                 </div>
@@ -471,7 +408,7 @@ export default function Home() {
 
 
       {/* 11. TESTIMONIALS */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-slate-50">
         <SectionHeading
           badge="Member Satisfaction"
           title="What Our Members"
@@ -488,7 +425,7 @@ export default function Home() {
 
 
       {/* 12. FAQ SECTION */}
-      <section className="py-20 sm:py-28 bg-[#0D0D0D] border-t border-zinc-900 relative">
+      <section className="py-20 sm:py-28 bg-white border-t border-slate-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Got Questions?"
@@ -499,27 +436,17 @@ export default function Home() {
 
           <FAQ limit={6} />
 
-          <div className="mt-12 text-center text-sm text-zinc-400">
+          <div className="mt-12 text-center text-sm text-slate-600">
             Have more questions?{' '}
-            <Link to="/contact" className="text-orange-400 font-bold hover:underline">
+            <Link to="/contact" className="text-yellow-600 font-bold hover:underline">
               Contact our support team directly →
             </Link>
           </div>
         </div>
       </section>
 
-
-      {/* 13. FINAL HIGH CONVERTING CTA */}
+      {/* CTA */}
       <CTASection />
-
-
-      {/* Lightbox Modal */}
-      <GalleryModal
-        activeImage={activeGalleryImage}
-        onClose={() => setActiveGalleryImage(null)}
-        onNext={nextGalleryImage}
-        onPrev={prevGalleryImage}
-      />
 
     </div>
   );

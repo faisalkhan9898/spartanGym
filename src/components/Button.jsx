@@ -15,15 +15,15 @@ export default function Button({
   disabled = false,
   ...props
 }) {
-  const baseStyles = 'inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-xl transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none select-none cursor-pointer';
+  const baseStyles = 'inline-flex items-center justify-center font-black uppercase tracking-wider rounded-xl transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none select-none cursor-pointer';
 
   const variants = {
-    primary: 'bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-400 text-white shadow-lg shadow-orange-600/30 hover:shadow-orange-500/50 border border-orange-500/30 hover:-translate-y-0.5',
-    secondary: 'bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700/80 hover:border-zinc-600 shadow-md hover:-translate-y-0.5',
-    outline: 'bg-transparent border-2 border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white shadow-sm hover:shadow-orange-500/30 hover:-translate-y-0.5 font-bold',
-    white: 'bg-white text-zinc-950 hover:bg-zinc-100 font-extrabold shadow-lg hover:shadow-white/20 hover:-translate-y-0.5',
-    ghost: 'bg-transparent text-zinc-300 hover:text-orange-400 hover:bg-zinc-800/60',
-    glow: 'bg-gradient-to-r from-orange-600 via-red-600 to-orange-500 text-white glow-orange hover:glow-orange-lg hover:-translate-y-0.5'
+    primary: 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 hover:from-yellow-300 hover:to-yellow-500 text-black shadow-lg shadow-yellow-500/30 hover:shadow-yellow-400/50 hover:-translate-y-0.5 font-black border border-yellow-300',
+    secondary: 'bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-700 hover:border-yellow-400/50 shadow-md hover:-translate-y-0.5',
+    outline: 'bg-transparent border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-black shadow-sm hover:shadow-yellow-400/40 hover:-translate-y-0.5 font-black',
+    white: 'bg-white text-black hover:bg-yellow-50 font-black shadow-lg hover:shadow-white/30 hover:-translate-y-0.5 border border-white',
+    ghost: 'bg-transparent text-white hover:text-yellow-300 hover:bg-white/10',
+    glow: 'bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 text-black font-black glow-yellow hover:glow-yellow-lg hover:-translate-y-0.5 border border-yellow-200'
   };
 
   const sizes = {
