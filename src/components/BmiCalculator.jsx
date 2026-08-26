@@ -69,10 +69,10 @@ export default function BmiCalculator() {
             <Calculator className="w-4 h-4" />
             <span>Interactive Fitness Tool</span>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-black text-slate-900 font-heading uppercase leading-tight mb-2">
+          <h3 className="text-xl xs:text-2xl sm:text-3xl font-black text-slate-900 font-heading uppercase leading-tight mb-2">
             Calculate Your <span className="text-gradient-yellow">Body Mass Index</span>
           </h3>
-          <p className="text-sm text-slate-600 mb-6">
+          <p className="text-xs sm:text-sm text-slate-600 mb-5 sm:mb-6">
             Get instant health metrics and discover which Spartans Gym program matches your body composition goals.
           </p>
 

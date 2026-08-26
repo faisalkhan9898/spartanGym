@@ -144,14 +144,14 @@ export default function Home() {
               <span>Our Philosophy & Legacy</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase font-heading tracking-tight leading-tight">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase font-heading tracking-tight leading-tight">
               More Than A Gym.{' '}
               <span className="text-gradient-yellow block">
                 It's A Lifestyle.
               </span>
             </h2>
 
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 text-xs sm:text-base leading-relaxed">
               Spartans Gym was founded with a singular mission: to strip away gimmicks and deliver true, uncompromising athletic excellence. We believe fitness is not just about aesthetics — it is about fortifying your body, sharpening mental resilience, and unlocking your absolute highest potential.
             </p>
 
@@ -285,7 +285,7 @@ export default function Home() {
 
 
       {/* 8. CLASSES SCHEDULE TIMETABLE */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-white">
+      <section className="py-14 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-white overflow-hidden">
         <SectionHeading
           badge="High Energy Group Fitness"
           title="Weekly Class"
@@ -293,63 +293,67 @@ export default function Home() {
           description="Over 50+ classes scheduled every week. Filter by day to plan your weekly workout calendar."
         />
 
-        {/* Day Selector Tabs */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
-          {daysOfWeek.map((day) => (
-            <button
-              key={day}
-              onClick={() => setSelectedDay(day)}
-              className={`px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer ${
-                selectedDay === day
-                  ? 'bg-yellow-400 text-slate-950 font-black shadow-md shadow-yellow-500/20'
-                  : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
-              }`}
-            >
-              {day}
-            </button>
-          ))}
+        {/* Day Selector Tabs — scrollable on mobile with gradient hint */}
+        <div className="relative -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-3 sm:pb-4 mb-5 sm:mb-8 no-scrollbar">
+            {daysOfWeek.map((day) => (
+              <button
+                key={day}
+                onClick={() => setSelectedDay(day)}
+                className={`px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 ${
+                  selectedDay === day
+                    ? 'bg-yellow-400 text-slate-950 font-black shadow-md shadow-yellow-500/20'
+                    : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
+                }`}
+              >
+                {/* Short name on mobile, full on sm+ */}
+                <span className="sm:hidden">{day.slice(0, 3)}</span>
+                <span className="hidden sm:inline">{day}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Timetable Schedule Cards for Selected Day */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {scheduleTimetable.map((slot, idx) => {
             const classInfo = slot[selectedDay];
             return (
               <div
                 key={idx}
-                className="bg-white rounded-3xl p-5 border border-slate-200 hover:border-yellow-400 transition-all flex flex-col justify-between shadow-sm hover:shadow-md"
+                className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-5 border border-slate-200 hover:border-yellow-400 transition-all flex flex-col justify-between shadow-sm hover:shadow-md"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-[11px] font-bold text-yellow-600 flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5" />
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 mb-1.5 sm:mb-3">
+                    <span className="text-[9px] sm:text-[11px] font-bold text-yellow-600 flex items-center gap-0.5 sm:gap-1">
+                      <Clock className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 shrink-0" />
                       {slot.time}
                     </span>
-                    <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-yellow-50 text-yellow-800 border border-yellow-200">
+                    <span className="px-1 sm:px-2 py-0.5 rounded text-[8px] sm:text-[10px] font-bold bg-yellow-50 text-yellow-800 border border-yellow-200 self-start sm:self-auto">
                       {classInfo.category}
                     </span>
                   </div>
 
-                  <h4 className="text-lg font-black text-slate-900 uppercase font-heading mb-1">
+                  <h4 className="text-xs sm:text-lg font-black text-slate-900 uppercase font-heading mb-0.5 sm:mb-1 leading-tight">
                     {classInfo.name}
                   </h4>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-[9px] sm:text-xs text-slate-500 hidden xs:block">
                     Coach: <strong className="text-slate-800">{classInfo.coach}</strong>
                   </p>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+                <div className="pt-2 sm:pt-4 mt-2 sm:mt-4 border-t border-slate-100 flex items-center justify-between text-[9px] sm:text-xs text-slate-600">
                   <span>🔥 {classInfo.calories}</span>
-                  <span className="font-bold text-yellow-600">{classInfo.room}</span>
+                  <span className="font-bold text-yellow-600 hidden xs:inline">{classInfo.room}</span>
                 </div>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-8 text-center">
-          <Button to="/classes" variant="outline" size="md" icon={ArrowRight}>
-            View Full Interactive Weekly Schedule
+        <div className="mt-5 sm:mt-8 text-center">
+          <Button to="/classes" variant="outline" size="md" className="text-[11px] sm:text-sm w-full sm:w-auto" icon={ArrowRight}>
+            View Full Weekly Schedule
           </Button>
         </div>
       </section>

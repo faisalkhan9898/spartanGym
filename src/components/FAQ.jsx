@@ -29,8 +29,8 @@ export default function FAQ({ items = faqsData, limit }) {
               className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none select-none cursor-pointer"
               aria-expanded={isOpen}
             >
-              <span className="flex items-center gap-3 font-bold text-base sm:text-lg text-slate-900">
-                <span className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 text-xs font-black transition-colors ${
+              <span className="flex items-center gap-3 font-bold text-sm sm:text-base md:text-lg text-slate-900">
+                <span className={`w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center shrink-0 text-[10px] sm:text-xs font-black transition-colors ${
                   isOpen ? 'bg-yellow-400 text-slate-950' : 'bg-slate-100 text-slate-700'
                 }`}>
                   Q{index + 1}
@@ -38,16 +38,16 @@ export default function FAQ({ items = faqsData, limit }) {
                 <span>{faq.question}</span>
               </span>
               <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
                   isOpen ? 'rotate-180 bg-yellow-400/20 text-yellow-800' : 'bg-slate-100 text-slate-500'
                 }`}
               >
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
             </button>
 
             {isOpen && (
-              <div className="px-6 pb-6 pt-1 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100 transition-opacity duration-300">
+              <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed border-t border-slate-100 transition-opacity duration-300">
                 <p>{faq.answer}</p>
               </div>
             )}

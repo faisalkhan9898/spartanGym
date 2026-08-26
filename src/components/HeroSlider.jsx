@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
-import { Flame, ChevronRight, ChevronLeft, CheckCircle2 } from 'lucide-react';
+import { Flame, ChevronRight, CheckCircle2 } from 'lucide-react';
 import Button from './Button';
 
 // Swiper styles
@@ -54,34 +54,19 @@ const heroSlides = [
 ];
 
 export default function HeroSlider() {
-  const [swiperInstance, setSwiperInstance] = useState(null);
-
-  const handlePrev = () => {
-    if (swiperInstance) {
-      swiperInstance.slidePrev();
-    }
-  };
-
-  const handleNext = () => {
-    if (swiperInstance) {
-      swiperInstance.slideNext();
-    }
-  };
-
   return (
-    <section className="relative min-h-[85vh] sm:min-h-[92vh] flex items-center justify-center pt-24 pb-16 sm:pb-28 overflow-hidden bg-black hero-swiper-wrapper select-none">
+    <section className="relative min-h-[85vh] sm:min-h-[92vh] flex items-center justify-center pt-20 sm:pt-24 pb-14 sm:pb-28 overflow-hidden bg-black hero-swiper-wrapper select-none">
       
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
         effect="fade"
-        speed={900}
+        speed={800}
         fadeEffect={{ crossFade: true }}
         loop={true}
         grabCursor={true}
         touchRatio={1.5}
-        onSwiper={setSwiperInstance}
         autoplay={{
-          delay: 5500,
+          delay: 3000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
@@ -100,55 +85,55 @@ export default function HeroSlider() {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-full object-cover object-center filter brightness-35 contrast-125 transition-transform duration-[6000ms] scale-105"
+                className="w-full h-full object-cover object-center filter brightness-35 contrast-125 transition-transform duration-[4000ms] scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/30"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/70"></div>
             </div>
 
             {/* Slide Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-14 lg:px-20 w-full pt-8 sm:pt-16 pb-12 sm:pb-0">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 w-full pt-10 sm:pt-16 pb-12 sm:pb-0">
               <div className="max-w-3xl">
                 
                 {/* Badge */}
-                <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest bg-yellow-500/20 text-yellow-300 border border-yellow-400/40 mb-4 sm:mb-6 backdrop-blur-md">
-                  <Flame className="w-3.5 h-3.5 text-yellow-400 animate-pulse" />
+                <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest bg-yellow-500/20 text-yellow-300 border border-yellow-400/40 mb-4 sm:mb-6 backdrop-blur-md max-w-full">
+                  <Flame className="w-3.5 h-3.5 text-yellow-400 animate-pulse shrink-0" />
                   <span className="truncate">{slide.badge}</span>
                 </div>
 
                 {/* Main Headline */}
-                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase font-heading tracking-tight leading-[1.1] mb-4 sm:mb-6">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white uppercase font-heading tracking-tight leading-[1.15] mb-3 sm:mb-5">
                   {slide.title}{' '}
-                  <span className="text-gradient-yellow block mt-1">
+                  <span className="text-gradient-yellow block mt-0.5 sm:mt-1">
                     {slide.highlight}
                   </span>
                 </h1>
 
                 {/* Supporting Subtext */}
-                <p className="text-sm sm:text-lg lg:text-xl text-zinc-200 font-normal leading-relaxed mb-6 sm:mb-8 max-w-2xl">
+                <p className="text-xs sm:text-base lg:text-lg text-zinc-200 font-normal leading-relaxed mb-5 sm:mb-8 max-w-2xl">
                   {slide.description}
                 </p>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-12 relative z-20">
-                  <Button to={slide.primaryCta.link} variant={slide.primaryCta.variant} size="lg" className="sm:text-base" icon={ChevronRight}>
+                <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-2.5 sm:gap-4 mb-6 sm:mb-12 relative z-20">
+                  <Button to={slide.primaryCta.link} variant={slide.primaryCta.variant} size="md" className="w-full xs:w-auto text-xs sm:text-sm sm:py-3.5" icon={ChevronRight}>
                     {slide.primaryCta.text}
                   </Button>
-                  <Button to={slide.secondaryCta.link} variant={slide.secondaryCta.variant} size="lg" className="sm:text-base">
+                  <Button to={slide.secondaryCta.link} variant={slide.secondaryCta.variant} size="md" className="w-full xs:w-auto text-xs sm:text-sm sm:py-3.5">
                     {slide.secondaryCta.text}
                   </Button>
                 </div>
 
                 {/* Quick Highlights */}
-                <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm font-semibold text-zinc-300 border-t border-zinc-800/80 pt-4 sm:pt-6">
+                <div className="flex flex-wrap items-center gap-2.5 sm:gap-6 text-[11px] sm:text-xs md:text-sm font-semibold text-zinc-300 border-t border-zinc-800/80 pt-3 sm:pt-6">
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-yellow-400" /> 1-Day Free VIP Pass
+                    <CheckCircle2 className="w-4 h-4 text-yellow-400 shrink-0" /> 1-Day Free VIP Pass
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-yellow-400" /> 100% Certified Coaches
+                    <CheckCircle2 className="w-4 h-4 text-yellow-400 shrink-0" /> 100% Certified Coaches
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-yellow-400" /> Open 7 Days / Week
+                    <CheckCircle2 className="w-4 h-4 text-yellow-400 shrink-0" /> Open 7 Days / Week
                   </span>
                 </div>
 
@@ -159,27 +144,7 @@ export default function HeroSlider() {
         ))}
       </Swiper>
 
-      {/* Navigation Arrow (Left) - scaled for mobile & desktop */}
-      <button
-        type="button"
-        onClick={handlePrev}
-        aria-label="Previous Slide"
-        className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-zinc-950/80 hover:bg-yellow-400 border border-yellow-400/80 hover:border-yellow-300 text-yellow-400 hover:text-black flex items-center justify-center transition-all duration-200 backdrop-blur-md cursor-pointer group shadow-xl hover:scale-105 active:scale-90"
-      >
-        <ChevronLeft className="w-5 h-5 sm:w-7 sm:h-7 text-yellow-400 group-hover:text-black transition-colors" />
-      </button>
-
-      {/* Navigation Arrow (Right) - scaled for mobile & desktop */}
-      <button
-        type="button"
-        onClick={handleNext}
-        aria-label="Next Slide"
-        className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-zinc-950/80 hover:bg-yellow-400 border border-yellow-400/80 hover:border-yellow-300 text-yellow-400 hover:text-black flex items-center justify-center transition-all duration-200 backdrop-blur-md cursor-pointer group shadow-xl hover:scale-105 active:scale-90"
-      >
-        <ChevronRight className="w-5 h-5 sm:w-7 sm:h-7 text-yellow-400 group-hover:text-black transition-colors" />
-      </button>
-
-      {/* Floating Bottom Stat Counter Bar */}
+      {/* Floating Bottom Stat Counter Bar (Desktop) */}
       <div className="absolute bottom-4 left-4 right-4 max-w-7xl mx-auto hidden lg:block z-20 pointer-events-none">
         <div className="glass-panel rounded-2xl p-5 border border-zinc-800 grid grid-cols-4 divide-x divide-zinc-800 pointer-events-auto shadow-2xl">
           <div className="px-6 text-center">
@@ -207,3 +172,4 @@ export default function HeroSlider() {
     </section>
   );
 }
+

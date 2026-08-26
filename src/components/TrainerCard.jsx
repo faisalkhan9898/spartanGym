@@ -60,17 +60,17 @@ export default function TrainerCard({ trainer }) {
       {/* Content */}
       <div className="p-6 flex flex-col flex-1 justify-between bg-white">
         <div>
-          <h3 className="text-xl font-black text-slate-900 font-heading uppercase group-hover:text-yellow-600 transition-colors">
+          <h3 className="text-lg sm:text-xl font-black text-slate-900 font-heading uppercase group-hover:text-yellow-600 transition-colors">
             {trainer.name}
           </h3>
-          <p className="text-xs text-yellow-600 font-bold uppercase tracking-wider mt-1">
+          <p className="text-xs text-yellow-600 font-bold uppercase tracking-wider mt-0.5 sm:mt-1">
             {trainer.role}
           </p>
-          <p className="text-xs text-slate-500 font-medium mt-0.5">
+          <p className="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5">
             {trainer.specialty}
           </p>
 
-          <p className="mt-3 text-sm text-slate-600 leading-relaxed line-clamp-2">
+          <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-2">
             {trainer.bio}
           </p>
 

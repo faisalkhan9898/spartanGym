@@ -48,18 +48,18 @@ export default function FreeTrial() {
     <div className="pt-24 min-h-screen bg-white text-slate-900">
       
       {/* Header */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-slate-950 text-center overflow-hidden border-b border-slate-900">
+      <section className="relative py-14 sm:py-16 px-4 sm:px-6 lg:px-8 bg-slate-950 text-center overflow-hidden border-b border-slate-900">
         <div className="relative z-10 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest bg-yellow-400/20 text-yellow-300 border border-yellow-400/40 mb-3 backdrop-blur-md">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest bg-yellow-400/20 text-yellow-300 border border-yellow-400/40 mb-3 backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
             <span>100% Free VIP Guest Pass</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase font-heading tracking-tight leading-tight">
+          <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase font-heading tracking-tight leading-tight">
             Claim Your <span className="text-gradient-yellow">1-Day Free Trial</span>
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-xl mx-auto">
+          <p className="mt-2.5 sm:mt-3 text-xs sm:text-base text-slate-300 max-w-xl mx-auto">
             Experience the Olympic grade facility, try out our coach-led group classes, and receive a free InBody composition analysis.
           </p>
         </div>

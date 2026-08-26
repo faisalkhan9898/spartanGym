@@ -23,18 +23,18 @@ export default function Programs() {
   return (
     <div className="pt-24">
       {/* Header */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950 text-center overflow-hidden border-b border-zinc-900">
+      <section className="relative py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950 text-center overflow-hidden border-b border-zinc-900">
         <div className="relative z-10 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest bg-yellow-500/15 text-yellow-300 border border-yellow-400/40 mb-4 backdrop-blur-md">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest bg-yellow-500/15 text-yellow-300 border border-yellow-400/40 mb-3 sm:mb-4 backdrop-blur-md">
             <Flame className="w-3.5 h-3.5 text-yellow-400" />
             <span>Targeted Protocols</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase font-heading tracking-tight leading-tight">
+          <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase font-heading tracking-tight leading-tight">
             Our Elite <span className="text-gradient-yellow">Training Programs</span>
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg text-zinc-300">
+          <p className="mt-3 sm:mt-4 text-xs sm:text-base text-zinc-300">
             From raw Olympic strength to metabolic shred and 1-on-1 VIP coaching, explore specialized blueprints engineered for concrete results.
           </p>
         </div>

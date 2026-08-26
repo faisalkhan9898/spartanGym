@@ -82,11 +82,11 @@ export default function BannerSlider() {
       {/* Header bar with controls */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest bg-yellow-400/20 text-yellow-800 border border-yellow-400/40 mb-2">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest bg-yellow-400/20 text-yellow-800 border border-yellow-400/40 mb-2">
             <Sparkles className="w-3.5 h-3.5 text-yellow-600" />
             <span>Featured Arena Highlights</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 uppercase font-heading tracking-tight">
+          <h2 className="text-xl xs:text-2xl sm:text-3xl font-black text-slate-900 uppercase font-heading tracking-tight">
             Spartan <span className="text-gradient-yellow">Action Showcase</span>
           </h2>
         </div>
@@ -174,7 +174,7 @@ export default function BannerSlider() {
 
                 {/* Bottom Content Area */}
                 <div className="relative z-10 p-6 mt-auto space-y-3">
-                  <h3 className="text-xl sm:text-2xl font-black text-white uppercase font-heading leading-tight group-hover:text-yellow-300 transition-colors">
+                  <h3 className="text-lg sm:text-2xl font-black text-white uppercase font-heading leading-tight group-hover:text-yellow-300 transition-colors">
                     {slide.title}
                   </h3>
 

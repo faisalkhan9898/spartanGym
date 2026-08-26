@@ -48,14 +48,14 @@ export default function ProgramCard({ program }) {
       {/* Content Area */}
       <div className="p-6 pt-7 flex flex-col flex-1 justify-between bg-white">
         <div>
-          <h3 className="text-xl sm:text-2xl font-black text-slate-900 font-heading group-hover:text-yellow-600 transition-colors uppercase">
+          <h3 className="text-lg sm:text-2xl font-black text-slate-900 font-heading group-hover:text-yellow-600 transition-colors uppercase">
             {program.title}
           </h3>
-          <p className="text-xs text-yellow-600 font-bold uppercase tracking-wider mt-1">
+          <p className="text-xs text-yellow-600 font-bold uppercase tracking-wider mt-0.5 sm:mt-1">
             {program.tagline}
           </p>
 
-          <p className="mt-3 text-sm text-slate-600 leading-relaxed line-clamp-3">
+          <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3">
             {program.shortDescription}
           </p>
 

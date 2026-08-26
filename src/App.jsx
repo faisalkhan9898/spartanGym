@@ -20,7 +20,7 @@ import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-slate-100 flex flex-col font-sans selection:bg-orange-600 selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-yellow-400 selection:text-slate-950 overflow-x-hidden">
       <ScrollToTop />
       <Navbar />
       <main className="flex-1">
@@ -44,3 +44,4 @@ export default function App() {
     </div>
   );
 }
+

@@ -58,15 +58,15 @@ export default function ProgramDetails() {
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-black text-white uppercase font-heading tracking-tight leading-tight">
+          <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase font-heading tracking-tight leading-tight">
             {program.title}
           </h1>
 
-          <p className="text-yellow-400 text-base sm:text-lg font-bold uppercase tracking-wider mt-2">
+          <p className="text-yellow-400 text-xs sm:text-base font-bold uppercase tracking-wider mt-1.5 sm:mt-2">
             {program.tagline}
           </p>
 
-          <p className="mt-6 text-base sm:text-xl text-zinc-300 max-w-3xl leading-relaxed">
+          <p className="mt-3 sm:mt-6 text-xs sm:text-base lg:text-xl text-zinc-300 max-w-3xl leading-relaxed">
             {program.description}
           </p>
 

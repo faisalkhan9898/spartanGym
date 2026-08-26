@@ -52,19 +52,19 @@ export default function About() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest bg-yellow-500/15 text-yellow-300 border border-yellow-400/40 mb-4 backdrop-blur-md">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest bg-yellow-500/15 text-yellow-300 border border-yellow-400/40 mb-3 sm:mb-4 backdrop-blur-md">
             <Flame className="w-3.5 h-3.5 text-yellow-400" />
             <span>Our Heritage & Vision</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase font-heading tracking-tight leading-tight">
+          <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase font-heading tracking-tight leading-tight">
             More Than A Gym.{' '}
             <span className="text-gradient-yellow block">
               It's A Lifestyle.
             </span>
           </h1>
 
-          <p className="mt-6 text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 sm:mt-6 text-xs sm:text-base lg:text-lg text-zinc-300 max-w-2xl mx-auto leading-relaxed">
             Spartans Gym was built to redefine the standard of commercial fitness. We are a sanctuary for those who refuse mediocrity and seek true athletic evolution.
           </p>
         </div>
@@ -72,23 +72,23 @@ export default function About() {
 
 
       {/* Story & Philosophy */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="py-14 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-yellow-500/15 text-yellow-300 border border-yellow-400/40">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-6">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-yellow-500/15 text-yellow-300 border border-yellow-400/40">
               <Dumbbell className="w-3.5 h-3.5 text-yellow-400" />
               <span>Founded in 2016</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-black text-white uppercase font-heading leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white uppercase font-heading leading-tight">
               Forged From Passion.{' '}
               <span className="text-gradient-yellow block">
                 Engineered For Strength.
               </span>
             </h2>
 
-            <p className="text-zinc-200 text-base leading-relaxed">
+            <p className="text-zinc-200 text-xs sm:text-base leading-relaxed">
               A decade ago, our founders looked around at conventional gyms and saw overcrowded floors, neglected equipment, and cookie-cutter personal training programs that produced zero long-term results.
             </p>
 
