@@ -32,16 +32,16 @@ export default function Classes() {
       {/* Main Timetable Content */}
       <section className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         
-        {/* Day Selector */}
-        <div className="-mx-4 px-4 sm:mx-0 sm:px-0">
-          <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-3 sm:pb-4 mb-6 sm:mb-8 no-scrollbar">
+        {/* Day Selector — smoothly scrollable with touch feedback */}
+        <div className="-mx-4 px-4 sm:mx-0 sm:px-0 mb-6 sm:mb-8">
+          <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 no-scrollbar touch-pan-x">
             {daysOfWeek.map((day) => (
               <button
                 key={day}
                 onClick={() => setSelectedDay(day)}
-                className={`px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all cursor-pointer shrink-0 ${
+                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 active:scale-95 ${
                   selectedDay === day
-                    ? 'bg-yellow-400 text-slate-950 font-black shadow-md shadow-yellow-500/30'
+                    ? 'bg-yellow-400 text-slate-950 font-black shadow-md shadow-yellow-500/25 ring-2 ring-yellow-400'
                     : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
                 }`}
               >
@@ -55,44 +55,44 @@ export default function Classes() {
         {/* Classes Grid for Day */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {scheduleTimetable.map((slot, idx) => {
-            const classInfo = slot[selectedDay];
+            const classInfo = slot[selectedDay] || { name: 'Open Gym', coach: 'Coach Staff', category: 'General', calories: '400 kcal', room: 'Main Floor' };
             return (
               <div
                 key={idx}
-                className="bg-white rounded-xl sm:rounded-3xl p-4 sm:p-7 border border-slate-200 hover:border-yellow-400 transition-all flex flex-col justify-between shadow-md hover:shadow-xl"
+                className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-slate-200 hover:border-yellow-400 transition-all flex flex-col justify-between shadow-md hover:shadow-xl"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-2 sm:mb-4">
-                    <span className="text-[10px] sm:text-xs font-bold text-yellow-600 flex items-center gap-1 sm:gap-1.5">
-                      <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <div className="flex items-center justify-between gap-2 mb-3 sm:mb-4">
+                    <span className="text-xs font-bold text-yellow-600 flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       {slot.time}
                     </span>
-                    <span className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[8px] sm:text-[10px] font-black uppercase tracking-wider bg-yellow-50 text-yellow-800 border border-yellow-200">
+                    <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-wider bg-yellow-50 text-yellow-800 border border-yellow-200">
                       {classInfo.category}
                     </span>
                   </div>
 
-                  <h3 className="text-base sm:text-2xl font-black text-slate-900 uppercase font-heading mb-1 sm:mb-2">
+                  <h3 className="text-lg sm:text-2xl font-black text-slate-900 uppercase font-heading mb-1.5 sm:mb-2">
                     {classInfo.name}
                   </h3>
 
-                  <div className="space-y-1 sm:space-y-1.5 text-[10px] sm:text-xs text-slate-600 mb-4 sm:mb-6">
-                    <p className="flex items-center gap-1.5 sm:gap-2">
-                      <User className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-600" />
-                      Coach: <strong className="text-slate-900 font-bold">{classInfo.coach}</strong>
+                  <div className="space-y-1.5 text-xs text-slate-600 mb-4 sm:mb-6">
+                    <p className="flex items-center gap-2">
+                      <User className="w-3.5 h-3.5 text-yellow-600" />
+                      <span>Coach: <strong className="text-slate-900 font-bold">{classInfo.coach}</strong></span>
                     </p>
-                    <p className="flex items-center gap-1.5 sm:gap-2">
-                      <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-600" />
-                      Burn: <strong className="text-slate-800 font-semibold">{classInfo.calories}</strong>
+                    <p className="flex items-center gap-2">
+                      <Flame className="w-3.5 h-3.5 text-yellow-600" />
+                      <span>Burn: <strong className="text-slate-800 font-semibold">{classInfo.calories}</strong></span>
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-3 sm:pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-[10px] sm:text-xs font-bold text-yellow-600 uppercase tracking-wider">
+                <div className="pt-3.5 sm:pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-xs font-bold text-yellow-600 uppercase tracking-wider">
                     {classInfo.room}
                   </span>
-                  <Button to="/free-trial" variant="primary" size="sm" className="text-[10px] sm:text-xs">
+                  <Button to="/free-trial" variant="primary" size="sm" className="text-xs px-3.5 py-1.5">
                     Book Spot
                   </Button>
                 </div>
