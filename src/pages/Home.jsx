@@ -5,6 +5,7 @@ import {
   Flame, 
   Award, 
   Users, 
+  User,
   Calendar, 
   ShieldCheck, 
   CheckCircle2, 
@@ -84,9 +85,9 @@ export default function Home() {
 
 
       {/* 3. FEATURED PROGRAMS */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-white">
+      <section className="py-12 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-white overflow-hidden">
         <div className="relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
             <SectionHeading
               badge="World-Class Training"
               title="Signature Training"
@@ -95,14 +96,14 @@ export default function Home() {
               align="left"
               className="mb-0 max-w-2xl"
             />
-            <div className="mt-6 md:mt-0">
+            <div className="mt-4 md:mt-0">
               <Button to="/programs" variant="secondary" size="md" icon={ArrowRight}>
                 View All Programs
               </Button>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {programsData.slice(0, 3).map((program) => (
               <ProgramCard key={program.id} program={program} />
             ))}
@@ -112,39 +113,39 @@ export default function Home() {
 
 
       {/* 4. ABOUT SECTION */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="py-12 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Collage Images */}
           <div className="lg:col-span-6 relative">
-            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+            <div className="relative z-10 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
               <img
                 src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=80"
                 alt="Spartans Gym Community"
-                className="w-full h-[440px] object-cover"
+                className="w-full h-[280px] sm:h-[440px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-md">
-                <p className="text-slate-900 font-extrabold text-sm uppercase">15,000+ Sq. Ft. World-Class Facility</p>
-                <p className="text-slate-500 text-xs mt-0.5">Designed with dedicated zones for power, cardio, recovery & turf.</p>
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-md">
+                <p className="text-slate-900 font-extrabold text-xs sm:text-sm uppercase">15,000+ Sq. Ft. World-Class Facility</p>
+                <p className="text-slate-500 text-[11px] sm:text-xs mt-0.5">Designed with dedicated zones for power, cardio, recovery & turf.</p>
               </div>
             </div>
 
             {/* Floating Experience Badge */}
-            <div className="absolute -top-6 -right-4 sm:-right-6 w-32 h-32 rounded-3xl bg-gradient-to-br from-yellow-400 to-amber-500 p-4 text-slate-950 flex flex-col justify-center items-center text-center shadow-2xl shadow-yellow-500/40 border-4 border-white z-20 font-black">
-              <span className="text-3xl font-black font-heading leading-none">10+</span>
-              <span className="text-[10px] font-black uppercase tracking-wider mt-1">Years Building Champions</span>
+            <div className="absolute -top-3 right-2 sm:-top-6 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-yellow-400 to-amber-500 p-2.5 sm:p-4 text-slate-950 flex flex-col justify-center items-center text-center shadow-xl sm:shadow-2xl shadow-yellow-500/40 border-3 sm:border-4 border-white z-20 font-black">
+              <span className="text-xl sm:text-3xl font-black font-heading leading-none">10+</span>
+              <span className="text-[8px] sm:text-[10px] font-black uppercase tracking-wider mt-0.5 sm:mt-1 leading-tight">Years Building Champions</span>
             </div>
           </div>
 
           {/* Right Text Content */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest bg-yellow-400/20 text-yellow-800 border border-yellow-400/40">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-6">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest bg-yellow-400/20 text-yellow-800 border border-yellow-400/40">
               <Flame className="w-3.5 h-3.5 text-yellow-500" />
               <span>Our Philosophy & Legacy</span>
             </div>
 
-            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase font-heading tracking-tight leading-tight">
+            <h2 className="text-xl xs:text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase font-heading tracking-tight leading-tight">
               More Than A Gym.{' '}
               <span className="text-gradient-yellow block">
                 It's A Lifestyle.
@@ -155,24 +156,24 @@ export default function Home() {
               Spartans Gym was founded with a singular mission: to strip away gimmicks and deliver true, uncompromising athletic excellence. We believe fitness is not just about aesthetics — it is about fortifying your body, sharpening mental resilience, and unlocking your absolute highest potential.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                <h4 className="text-slate-900 font-bold text-sm uppercase flex items-center gap-2 mb-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-1 sm:pt-2">
+              <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-200">
+                <h4 className="text-slate-900 font-bold text-xs sm:text-sm uppercase flex items-center gap-2 mb-1">
                   <CheckCircle2 className="w-4 h-4 text-yellow-500" /> Evidence-Based
                 </h4>
-                <p className="text-xs text-slate-500">Programs engineered with sports science and nutrition precision.</p>
+                <p className="text-[11px] sm:text-xs text-slate-500">Programs engineered with sports science and nutrition precision.</p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                <h4 className="text-slate-900 font-bold text-sm uppercase flex items-center gap-2 mb-1">
+              <div className="p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-200">
+                <h4 className="text-slate-900 font-bold text-xs sm:text-sm uppercase flex items-center gap-2 mb-1">
                   <CheckCircle2 className="w-4 h-4 text-yellow-500" /> Unmatched Culture
                 </h4>
-                <p className="text-xs text-slate-500">Zero ego, high accountability, and peers cheering every PR.</p>
+                <p className="text-[11px] sm:text-xs text-slate-500">Zero ego, high accountability, and peers cheering every PR.</p>
               </div>
             </div>
 
-            <div className="pt-4 flex items-center gap-4">
-              <Button to="/about" variant="primary" size="lg" icon={ChevronRight}>
+            <div className="pt-2 sm:pt-4 flex items-center gap-4">
+              <Button to="/about" variant="primary" size="md" icon={ChevronRight}>
                 Learn More About Us
               </Button>
             </div>
@@ -181,9 +182,8 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* 5. REAL TRANSFORMATIONS */}
-      <section className="py-20 sm:py-28 bg-slate-50 border-t border-slate-200 relative">
+      <section className="py-12 sm:py-28 bg-slate-50 border-t border-slate-200 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Proven Case Studies"
@@ -192,14 +192,14 @@ export default function Home() {
             description="Witness what happens when dedication meets world-class coaching. Real member milestones, zero filter, 100% effort."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {transformationsData.map((item) => (
               <TransformationCard key={item.id} item={item} />
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-sm text-slate-600 mb-4">
+          <div className="mt-8 sm:mt-12 text-center">
+            <p className="text-xs sm:text-sm text-slate-600 mb-3 sm:mb-4">
               Ready to write your own transformation story?
             </p>
             <Button to="/join" variant="primary" size="md" icon={ChevronRight}>
@@ -209,10 +209,9 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* 6. EXPERT TRAINERS */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-white">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <section className="py-12 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-white overflow-hidden">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
           <SectionHeading
             badge="Master Coaching Staff"
             title="Meet Our"
@@ -221,23 +220,22 @@ export default function Home() {
             align="left"
             className="mb-0 max-w-2xl"
           />
-          <div className="mt-6 md:mt-0">
+          <div className="mt-4 md:mt-0">
             <Button to="/trainers" variant="secondary" size="md" icon={ArrowRight}>
               View All 20+ Coaches
             </Button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {trainersData.slice(0, 4).map((trainer) => (
             <TrainerCard key={trainer.id} trainer={trainer} />
           ))}
         </div>
       </section>
 
-
       {/* 7. MEMBERSHIP PLANS */}
-      <section className="py-20 sm:py-28 bg-slate-50 border-y border-slate-200 relative">
+      <section className="py-12 sm:py-28 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SectionHeading
@@ -293,20 +291,19 @@ export default function Home() {
           description="Over 50+ classes scheduled every week. Filter by day to plan your weekly workout calendar."
         />
 
-        {/* Day Selector Tabs — scrollable on mobile with gradient hint */}
-        <div className="relative -mx-4 px-4 sm:mx-0 sm:px-0">
-          <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-3 sm:pb-4 mb-5 sm:mb-8 no-scrollbar">
+        {/* Day Selector Tabs — scrollable on mobile */}
+        <div className="-mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-3 sm:pb-4 mb-6 sm:mb-8 no-scrollbar">
             {daysOfWeek.map((day) => (
               <button
                 key={day}
                 onClick={() => setSelectedDay(day)}
-                className={`px-3 sm:px-5 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 ${
+                className={`px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 ${
                   selectedDay === day
                     ? 'bg-yellow-400 text-slate-950 font-black shadow-md shadow-yellow-500/20'
                     : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
                 }`}
               >
-                {/* Short name on mobile, full on sm+ */}
                 <span className="sm:hidden">{day.slice(0, 3)}</span>
                 <span className="hidden sm:inline">{day}</span>
               </button>
@@ -315,44 +312,56 @@ export default function Home() {
         </div>
 
         {/* Timetable Schedule Cards for Selected Day */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {scheduleTimetable.map((slot, idx) => {
             const classInfo = slot[selectedDay];
             return (
               <div
                 key={idx}
-                className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-5 border border-slate-200 hover:border-yellow-400 transition-all flex flex-col justify-between shadow-sm hover:shadow-md"
+                className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-slate-200 hover:border-yellow-400 transition-all flex flex-col justify-between shadow-sm hover:shadow-md"
               >
                 <div>
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 mb-1.5 sm:mb-3">
-                    <span className="text-[9px] sm:text-[11px] font-bold text-yellow-600 flex items-center gap-0.5 sm:gap-1">
-                      <Clock className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 shrink-0" />
+                  <div className="flex items-center justify-between gap-2 mb-2 sm:mb-3">
+                    <span className="text-[11px] sm:text-xs font-bold text-yellow-600 flex items-center gap-1 sm:gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-yellow-600" />
                       {slot.time}
                     </span>
-                    <span className="px-1 sm:px-2 py-0.5 rounded text-[8px] sm:text-[10px] font-bold bg-yellow-50 text-yellow-800 border border-yellow-200 self-start sm:self-auto">
+                    <span className="px-2 py-0.5 rounded-md text-[9px] sm:text-[10px] font-bold bg-yellow-50 text-yellow-800 border border-yellow-200">
                       {classInfo.category}
                     </span>
                   </div>
 
-                  <h4 className="text-xs sm:text-lg font-black text-slate-900 uppercase font-heading mb-0.5 sm:mb-1 leading-tight">
+                  <h3 className="text-base sm:text-xl font-black text-slate-900 uppercase font-heading mb-2">
                     {classInfo.name}
-                  </h4>
-                  <p className="text-[9px] sm:text-xs text-slate-500 hidden xs:block">
-                    Coach: <strong className="text-slate-800">{classInfo.coach}</strong>
-                  </p>
+                  </h3>
+
+                  <div className="space-y-1 sm:space-y-1.5 text-xs text-slate-600 mb-4">
+                    <p className="flex items-center gap-2">
+                      <User className="w-3.5 h-3.5 text-yellow-600 shrink-0" />
+                      <span>Coach: <strong className="text-slate-900 font-bold">{classInfo.coach}</strong></span>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <Flame className="w-3.5 h-3.5 text-yellow-600 shrink-0" />
+                      <span>Burn: <strong className="text-slate-800 font-semibold">{classInfo.calories}</strong></span>
+                    </p>
+                  </div>
                 </div>
 
-                <div className="pt-2 sm:pt-4 mt-2 sm:mt-4 border-t border-slate-100 flex items-center justify-between text-[9px] sm:text-xs text-slate-600">
-                  <span>🔥 {classInfo.calories}</span>
-                  <span className="font-bold text-yellow-600 hidden xs:inline">{classInfo.room}</span>
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-xs font-bold text-yellow-600 uppercase tracking-wider">
+                    {classInfo.room}
+                  </span>
+                  <Button to="/free-trial" variant="primary" size="sm" className="text-xs px-3 py-1.5">
+                    Book Spot
+                  </Button>
                 </div>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-5 sm:mt-8 text-center">
-          <Button to="/classes" variant="outline" size="md" className="text-[11px] sm:text-sm w-full sm:w-auto" icon={ArrowRight}>
+        <div className="mt-8 text-center">
+          <Button to="/classes" variant="outline" size="md" className="text-xs sm:text-sm w-full sm:w-auto" icon={ArrowRight}>
             View Full Weekly Schedule
           </Button>
         </div>
@@ -360,13 +369,13 @@ export default function Home() {
 
 
       {/* 9. BMI CALCULATOR */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50 border-y border-slate-200 rounded-3xl my-6">
+      <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50 border-y border-slate-200 rounded-2xl sm:rounded-3xl my-4 sm:my-6 overflow-hidden">
         <BmiCalculator />
       </section>
 
 
       {/* 10. GYM PHOTO GALLERY */}
-      <section className="py-20 sm:py-28 bg-white border-b border-slate-200 relative">
+      <section className="py-12 sm:py-28 bg-white border-b border-slate-200 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="State-Of-The-Art Arena"
@@ -375,12 +384,12 @@ export default function Home() {
             description="Click on any photo to open full-screen high-resolution preview and facility details."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {galleryItems.slice(0, 6).map((item, idx) => (
               <div
                 key={item.id}
                 onClick={() => openGalleryModal(idx)}
-                className="group relative h-72 rounded-3xl overflow-hidden cursor-pointer bg-white border border-slate-200 hover:border-yellow-400 transition-all duration-300 shadow-md"
+                className="group relative h-56 sm:h-72 rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer bg-white border border-slate-200 hover:border-yellow-400 transition-all duration-300 shadow-md"
               >
                 <img
                   src={item.image}
@@ -390,11 +399,11 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-yellow-400 text-slate-950 mb-1.5 font-black">
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-wider bg-yellow-400 text-slate-950 mb-1 sm:mb-1.5 font-black">
                     {item.category}
                   </span>
-                  <h4 className="text-base font-black text-white uppercase font-heading group-hover:text-yellow-300 transition-colors">
+                  <h4 className="text-sm sm:text-base font-black text-white uppercase font-heading group-hover:text-yellow-300 transition-colors">
                     {item.title}
                   </h4>
                 </div>
@@ -402,7 +411,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="mt-8 sm:mt-10 text-center">
             <Button to="/gallery" variant="secondary" size="md" icon={ArrowRight}>
               View Full Gallery & Tour
             </Button>
@@ -412,7 +421,7 @@ export default function Home() {
 
 
       {/* 11. TESTIMONIALS */}
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-slate-50">
+      <section className="py-12 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-slate-50 overflow-hidden">
         <SectionHeading
           badge="Member Satisfaction"
           title="What Our Members"
@@ -420,7 +429,7 @@ export default function Home() {
           description="Over 5,000+ everyday fitness enthusiasts, corporate executives, and elite athletes train with us daily."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {testimonialsData.map((testi) => (
             <TestimonialCard key={testi.id} testimonial={testi} />
           ))}
@@ -429,7 +438,7 @@ export default function Home() {
 
 
       {/* 12. FAQ SECTION */}
-      <section className="py-20 sm:py-28 bg-white border-t border-slate-200 relative">
+      <section className="py-12 sm:py-28 bg-white border-t border-slate-200 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Got Questions?"
@@ -440,7 +449,7 @@ export default function Home() {
 
           <FAQ limit={6} />
 
-          <div className="mt-12 text-center text-sm text-slate-600">
+          <div className="mt-8 sm:mt-12 text-center text-xs sm:text-sm text-slate-600">
             Have more questions?{' '}
             <Link to="/contact" className="text-yellow-600 font-bold hover:underline">
               Contact our support team directly →
