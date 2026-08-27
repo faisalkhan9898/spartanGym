@@ -291,16 +291,16 @@ export default function Home() {
           description="Over 50+ classes scheduled every week. Filter by day to plan your weekly workout calendar."
         />
 
-        {/* Day Selector Tabs — smoothly scrollable with touch feedback */}
-        <div className="-mx-4 px-4 sm:mx-0 sm:px-0 mb-6 sm:mb-8">
-          <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 no-scrollbar touch-pan-x">
+        {/* Day Selector Tabs — 7-column grid on mobile, flex on desktop */}
+        <div className="w-full max-w-full mb-6 sm:mb-8">
+          <div className="grid grid-cols-7 gap-1 sm:flex sm:items-center sm:justify-center sm:gap-2">
             {daysOfWeek.map((day) => (
               <button
                 key={day}
                 onClick={() => setSelectedDay(day)}
-                className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 active:scale-95 ${
+                className={`py-2 px-0.5 sm:py-2.5 sm:px-5 rounded-lg sm:rounded-xl text-[10px] xs:text-[11px] sm:text-xs font-black uppercase tracking-wider text-center transition-all duration-200 cursor-pointer active:scale-95 flex items-center justify-center ${
                   selectedDay === day
-                    ? 'bg-yellow-400 text-slate-950 font-black shadow-md shadow-yellow-500/25 ring-2 ring-yellow-400'
+                    ? 'bg-yellow-400 text-slate-950 font-black shadow-md shadow-yellow-500/30 ring-2 ring-yellow-400'
                     : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
                 }`}
               >
