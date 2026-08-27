@@ -71,16 +71,16 @@ export default function WhatsAppButton() {
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Connect on WhatsApp or Call"
           title="Chat on WhatsApp or Call Us"
-          className="relative group flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white shadow-2xl shadow-emerald-600/50 border-2 border-white/20 transition-all duration-300 hover:scale-110 active:scale-90 cursor-pointer"
+          className="relative group flex items-center justify-center w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white shadow-2xl shadow-emerald-600/50 border-2 border-white/20 transition-all duration-300 hover:scale-110 active:scale-90 cursor-pointer"
         >
           {/* Notification Ping Badge */}
-          <span className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 text-black text-[9px] font-black rounded-full flex items-center justify-center border border-black animate-pulse">
+          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-yellow-400 text-black text-[8px] sm:text-[9px] font-black rounded-full flex items-center justify-center border border-black animate-pulse">
             1
           </span>
           {isOpen ? (
-            <X className="w-6 h-6 sm:w-7 sm:h-7" />
+            <X className="w-5 h-5 sm:w-7 sm:h-7" />
           ) : (
-            <WhatsappIcon className="w-6 h-6 sm:w-7 sm:h-7" />
+            <WhatsappIcon className="w-5 h-5 sm:w-7 sm:h-7" />
           )}
         </button>
       </div>

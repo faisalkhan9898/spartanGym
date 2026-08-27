@@ -283,7 +283,7 @@ export default function Home() {
 
 
       {/* 8. CLASSES SCHEDULE TIMETABLE */}
-      <section className="py-14 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-white overflow-hidden">
+      <section className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative bg-white overflow-hidden">
         <SectionHeading
           badge="High Energy Group Fitness"
           title="Weekly Class"
@@ -293,12 +293,12 @@ export default function Home() {
 
         {/* Day Selector Tabs — smoothly scrollable with touch feedback */}
         <div className="-mx-4 px-4 sm:mx-0 sm:px-0 mb-6 sm:mb-8">
-          <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 no-scrollbar touch-pan-x">
+          <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 no-scrollbar touch-pan-x">
             {daysOfWeek.map((day) => (
               <button
                 key={day}
                 onClick={() => setSelectedDay(day)}
-                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 active:scale-95 ${
+                className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer shrink-0 active:scale-95 ${
                   selectedDay === day
                     ? 'bg-yellow-400 text-slate-950 font-black shadow-md shadow-yellow-500/25 ring-2 ring-yellow-400'
                     : 'bg-slate-100 text-slate-700 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
@@ -312,46 +312,50 @@ export default function Home() {
         </div>
 
         {/* Timetable Schedule Cards for Selected Day */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {scheduleTimetable.map((slot, idx) => {
             const classInfo = slot[selectedDay] || { name: 'Open Gym', coach: 'Coach Staff', category: 'General', calories: '400 kcal', room: 'Main Floor' };
             return (
               <div
                 key={idx}
-                className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-slate-200 hover:border-yellow-400 transition-all flex flex-col justify-between shadow-sm hover:shadow-md"
+                className="bg-white rounded-xl sm:rounded-3xl p-4 sm:p-6 border border-slate-200 border-l-4 border-l-yellow-400 hover:border-yellow-400 transition-all flex flex-col justify-between shadow-sm hover:shadow-md"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-xs font-bold text-yellow-600 flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-yellow-600" />
+                  {/* Time and Badge Row */}
+                  <div className="flex items-center justify-between gap-2 mb-2 sm:mb-3">
+                    <span className="text-[11px] sm:text-xs font-bold text-yellow-700 flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5 text-yellow-600 shrink-0" />
                       {slot.time}
                     </span>
-                    <span className="px-2.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-yellow-50 text-yellow-800 border border-yellow-200">
+                    <span className="px-2 py-0.5 rounded-md text-[9px] sm:text-[10px] font-black uppercase tracking-wider bg-yellow-50 text-yellow-800 border border-yellow-200">
                       {classInfo.category}
                     </span>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl font-black text-slate-900 uppercase font-heading mb-2">
+                  {/* Class Title */}
+                  <h3 className="text-base sm:text-xl font-black text-slate-900 uppercase font-heading mb-2 leading-tight">
                     {classInfo.name}
                   </h3>
 
-                  <div className="space-y-1.5 text-xs text-slate-600 mb-4">
-                    <p className="flex items-center gap-2">
+                  {/* Coach & Calorie Info */}
+                  <div className="grid grid-cols-2 gap-2 text-xs text-slate-600 mb-3 sm:mb-4 bg-slate-50 p-2.5 rounded-lg sm:bg-transparent sm:p-0">
+                    <p className="flex items-center gap-1.5 truncate">
                       <User className="w-3.5 h-3.5 text-yellow-600 shrink-0" />
-                      <span>Coach: <strong className="text-slate-900 font-bold">{classInfo.coach}</strong></span>
+                      <span className="truncate">{classInfo.coach}</span>
                     </p>
-                    <p className="flex items-center gap-2">
+                    <p className="flex items-center gap-1.5 justify-end sm:justify-start">
                       <Flame className="w-3.5 h-3.5 text-yellow-600 shrink-0" />
-                      <span>Burn: <strong className="text-slate-800 font-semibold">{classInfo.calories}</strong></span>
+                      <span>{classInfo.calories}</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-3.5 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs font-bold text-yellow-600 uppercase tracking-wider">
+                {/* Room & Action Button */}
+                <div className="pt-2.5 sm:pt-3.5 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-[11px] sm:text-xs font-bold text-yellow-700 uppercase tracking-wider">
                     {classInfo.room}
                   </span>
-                  <Button to="/free-trial" variant="primary" size="sm" className="text-xs px-3.5 py-1.5">
+                  <Button to="/free-trial" variant="primary" size="sm" className="text-[11px] sm:text-xs px-3 py-1.5">
                     Book Spot
                   </Button>
                 </div>
@@ -360,7 +364,7 @@ export default function Home() {
           })}
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-6 sm:mt-8 text-center">
           <Button to="/classes" variant="outline" size="md" className="text-xs sm:text-sm w-full sm:w-auto" icon={ArrowRight}>
             View Full Weekly Schedule
           </Button>

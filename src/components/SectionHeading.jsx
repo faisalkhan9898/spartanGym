@@ -19,7 +19,7 @@ export default function SectionHeading({
         </div>
       )}
       
-      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight uppercase text-slate-900 leading-tight">
+      <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight uppercase text-slate-900 leading-tight">
         {title}{' '}
         {highlight && (
           <span className="text-gradient-yellow relative inline-block">
